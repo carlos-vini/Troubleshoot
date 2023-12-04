@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function output(input) {
   let product;
 
-  // Remover espaços em branco
+  // Remover espaços em branco e coloca tudo para letras minúsculas
 
   let text = input.toLowerCase().trim();
   text = text
@@ -24,7 +24,7 @@ function output(input) {
     product = "You're welcome!"
   } else {
     // Se todos falharem vai para o texto alternativo
-    product = alternative[Math.floor(Math.random() * alternative.length)];
+    product = alternative[0];
   }
 
   // Atualizar o DOM
@@ -39,7 +39,7 @@ function compare(promptsArray, repliesArray, string) {
     for (let y = 0; y < promptsArray[x].length; y++) {
       if (promptsArray[x][y] === string) {
         let replies = repliesArray[x];
-        reply = replies[Math.floor(Math.random() * replies.length)];
+        reply = replies[0];
         replyFound = true;
         // Para o loop se encontrar o prompt
         break;
