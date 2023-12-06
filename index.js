@@ -20,8 +20,6 @@ function output(input) {
   if (compare(prompts, replies, text)) { 
     // Procura o prompt
     product = compare(prompts, replies, text);
-  } else if (text.match(/thank/gi)) {
-    product = "You're welcome!"
   } else {
     // Se todos falharem vai para o texto alternativo
     product = alternative[0];
@@ -82,9 +80,6 @@ function addChat(input, product) {
     botText.innerText = `${product}`;
   }, 500
   )
-
-  console.log(input);
-
 }
 
 // Botão para abrir e fechar o chat
@@ -92,7 +87,6 @@ function addChat(input, product) {
 let btn = document.getElementById("btn");
 let btnClose = document.getElementById("btnClose");
 let chat = document.getElementById("chat");
-
 
 btn.addEventListener("click", () =>{
   chat.style.display = "flex";
